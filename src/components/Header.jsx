@@ -23,14 +23,14 @@ const Header = () => {
   return (
     <>
       <header 
-        className={`fixed z-50 transition-all duration-500 ease-in-out ${
-          scrolled 
-            ? 'top-4 left-4 right-4 bg-white/60 dark:bg-black/60 backdrop-blur-3xl shadow-2xl border-2 border-beige-300/70 dark:border-beige-700/50 rounded-2xl' 
-            : 'top-0 left-0 right-0 bg-transparent'
-        }`}
+         className={`fixed z-50 transition-all duration-500 ease-in-out ${
+    scrolled 
+      ? 'top-4 md:left-1/4 md:right-1/4 left-4 right-4 bg-white/30 dark:bg-black/30 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.15)] border border-white/20 dark:border-white/10 rounded-2xl'
+      : 'top-0 left-0 right-0 bg-transparent'
+  }`}
       >
-        <nav className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${
-          scrolled ? 'py-2.5' : 'py-5'
+        <nav className={`mx-auto px-6 flex items-center justify-between transition-all duration-500 ${
+          scrolled ? 'py-2.5 max-w-4xl' : 'py-5 max-w-7xl'
         }`}>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
