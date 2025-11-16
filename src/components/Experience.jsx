@@ -2,25 +2,11 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'Tech Company Inc.',
-    period: '2023 - Present',
-    description: 'Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and architecting robust solutions.',
-    technologies: ['React', 'Node.js', 'AWS', 'MongoDB']
-  },
-  {
-    title: 'Full Stack Developer',
-    company: 'Digital Solutions Ltd.',
-    period: '2021 - 2023',
-    description: 'Developed and maintained multiple client projects, implemented RESTful APIs, and improved application performance by 40%.',
-    technologies: ['React', 'Express', 'PostgreSQL', 'Docker']
-  },
-  {
-    title: 'Frontend Developer',
-    company: 'Startup Ventures',
-    period: '2020 - 2021',
-    description: 'Built responsive user interfaces, collaborated with design team to implement pixel-perfect designs, and optimized web performance.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Redux']
+    title: 'Your Job Title',
+    company: 'Company Name',
+    period: 'Start Date - Present',
+    description: 'Describe your role, responsibilities, and key achievements in this position. Focus on the impact you made and technologies you worked with.',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS']
   }
 ]
 

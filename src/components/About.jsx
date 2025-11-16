@@ -12,9 +12,9 @@ const About = () => {
           className="flex flex-col md:flex-row items-center gap-12"
         >
           <div className="flex-shrink-0">
-            <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg bg-beige-300 dark:bg-dark-card">
+            <div className="w-48 h-48 rounded-lg overflow-hidden shadow-lg bg-beige-300 dark:bg-dark-card">
               <img 
-                src="https://via.placeholder.com/160" 
+                src="https://via.placeholder.com/192" 
                 alt="Profile" 
                 className="w-full h-full object-cover"
               />

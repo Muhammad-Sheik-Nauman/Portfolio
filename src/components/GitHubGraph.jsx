@@ -16,7 +16,7 @@ const GitHubGraph = () => {
       const data = await response.json()
       
       if (data.contributions) {
-        const recentContributions = data.contributions.slice(-364)
+        const recentContributions = data.contributions.slice(-182)
         setContributions(organizeByWeeks(recentContributions))
       }
     } catch (error) {
@@ -37,9 +37,9 @@ const GitHubGraph = () => {
 
   const generateMockData = () => {
     const days = []
-    for (let i = 0; i < 364; i++) {
+    for (let i = 0; i < 182; i++) {
       days.push({
-        date: new Date(Date.now() - (363 - i) * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+        date: new Date(Date.now() - (181 - i) * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
         count: Math.floor(Math.random() * 10),
         level: Math.floor(Math.random() * 5)
       })
@@ -74,13 +74,13 @@ const GitHubGraph = () => {
             </div>
           ) : (
             <div className="overflow-x-auto pb-4">
-              <div className="inline-flex gap-1 min-w-full justify-center">
+              <div className="inline-flex gap-1.5 min-w-full justify-center">
                 {contributions.map((week, weekIndex) => (
-                  <div key={weekIndex} className="flex flex-col gap-1">
+                  <div key={weekIndex} className="flex flex-col gap-1.5">
                     {week.map((day, dayIndex) => (
                       <div
                         key={dayIndex}
-                        className={`w-3 h-3 rounded-sm ${getColor(day.count)} transition-colors hover:ring-1 hover:ring-beige-500`}
+                        className={`w-3.5 h-3.5 rounded-sm ${getColor(day.count)} transition-colors hover:ring-1 hover:ring-beige-500`}
                         title={`${day.date}: ${day.count} contributions`}
                       />
                     ))}
@@ -90,11 +90,11 @@ const GitHubGraph = () => {
               
               <div className="flex items-center justify-center gap-2 mt-6">
                 <span className="text-xs text-beige-600 dark:text-dark-muted">Less</span>
-                <div className="flex gap-1">
+                <div className="flex gap-1.5">
                   {[0, 2, 4, 6, 8].map((level) => (
                     <div
                       key={level}
-                      className={`w-3 h-3 rounded-sm ${getColor(level)}`}
+                      className={`w-3.5 h-3.5 rounded-sm ${getColor(level)}`}
                     />
                   ))}
                 </div>
@@ -104,7 +104,7 @@ const GitHubGraph = () => {
           )}
           
           <p className="text-center text-sm text-beige-600 dark:text-dark-muted mt-6">
-            Last 12 months of contributions
+            Last 6 months of contributions
           </p>
         </motion.div>
       </div>
