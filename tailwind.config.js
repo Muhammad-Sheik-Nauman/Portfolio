@@ -20,10 +20,12 @@ export default {
           900: '#4a3f32',
         },
         dark: {
-          bg: '#1a1816',
-          card: '#252220',
-          text: '#e8dcc8',
-          muted: '#9d8f7f',
+          bg: '#0f0e0d',
+          card: '#1a1816',
+          border: '#2d2a27',
+          text: '#f3ede3',
+          muted: '#b39c7d',
+          accent: '#d9c8ab',
         }
       },
       fontFamily: {

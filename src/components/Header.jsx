@@ -25,7 +25,7 @@ const Header = () => {
       <header 
          className={`fixed z-50 transition-all duration-500 ease-in-out ${
     scrolled 
-      ? 'top-4 md:left-1/4 md:right-1/4 left-4 right-4 bg-white/30 dark:bg-black/30 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.15)] border border-white/20 dark:border-white/10 rounded-2xl'
+      ? 'top-4 md:left-1/4 md:right-1/4 left-4 right-4 bg-white/40 dark:bg-dark-card/80 backdrop-blur-3xl shadow-[0_8px_32px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/30 dark:border-dark-border rounded-2xl'
       : 'top-0 left-0 right-0 bg-transparent'
   }`}
       >
@@ -40,7 +40,7 @@ const Header = () => {
           >
             <div className="flex items-center gap-1">
               <span className="font-thin text-beige-600 dark:text-dark-muted">{`{`}</span>
-              <span className="font-medium tracking-wide">YN</span>
+              <span className="font-medium tracking-wide">nauman</span>
               <span className="font-thin text-beige-600 dark:text-dark-muted">{`}`}</span>
             </div>
           </button>
@@ -113,7 +113,7 @@ const Header = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-[60] bg-beige-50/95 dark:bg-dark-bg/95 backdrop-blur-2xl md:hidden"
+              className="fixed inset-0 z-[60] bg-beige-50/95 dark:bg-dark-bg/98 backdrop-blur-3xl md:hidden"
               onClick={() => setMobileMenuOpen(false)}
             />
             
@@ -143,7 +143,7 @@ const Header = () => {
                     window.scrollTo({ top: 0, behavior: 'smooth' })
                     setMobileMenuOpen(false)
                   }}
-                  className="text-4xl font-light text-beige-900 dark:text-dark-text hover:text-beige-700 dark:hover:text-beige-400 transition-colors"
+                  className="text-4xl font-light text-beige-900 dark:text-dark-text hover:text-beige-700 dark:hover:text-dark-accent transition-colors"
                 >
                   Home
                 </motion.button>

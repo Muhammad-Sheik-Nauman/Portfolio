@@ -32,9 +32,9 @@ const Experience = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="relative pl-8 border-l-2 border-beige-300 dark:border-dark-muted/30"
+                className="relative pl-8 border-l-2 border-beige-300 dark:border-beige-600/40"
               >
-                <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-beige-600 dark:bg-beige-500"></div>
+                <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-beige-600 dark:bg-beige-500 ring-4 ring-beige-50 dark:ring-dark-bg"></div>
                 
                 <div className="pb-8">
                   <h4 className="text-xl font-medium text-beige-900 dark:text-dark-text mb-1">
@@ -58,7 +58,7 @@ const Experience = () => {
                     {exp.technologies.map(tech => (
                       <span 
                         key={tech}
-                        className="text-xs px-3 py-1 bg-beige-200 dark:bg-dark-bg text-beige-800 dark:text-dark-muted rounded-full"
+                        className="text-xs px-3 py-1 bg-beige-200 dark:bg-dark-bg text-beige-800 dark:text-dark-accent border border-transparent dark:border-dark-border rounded-full"
                       >
                         {tech}
                       </span>

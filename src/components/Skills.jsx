@@ -28,9 +28,9 @@ const Skills = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-beige-50 dark:bg-dark-bg px-6 py-4 rounded-sm text-center shadow-sm hover:shadow-md transition-shadow"
+                className="bg-beige-50 dark:bg-dark-bg px-6 py-4 rounded-sm text-center shadow-sm hover:shadow-md dark:shadow-md dark:hover:shadow-xl dark:border dark:border-dark-border dark:hover:border-beige-600/30 transition-all duration-300"
               >
-                <span className="text-sm font-light text-beige-800 dark:text-dark-text">
+                <span className="text-sm font-light text-beige-800 dark:text-dark-accent">
                   {skill}
                 </span>
               </motion.div>

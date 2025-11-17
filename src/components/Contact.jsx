@@ -68,7 +68,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-beige-100 dark:bg-dark-card text-beige-900 dark:text-dark-text border border-beige-300 dark:border-dark-muted/20 rounded-sm focus:outline-none focus:border-beige-500 dark:focus:border-beige-600 transition-colors"
+                className="w-full px-4 py-3 bg-beige-100 dark:bg-dark-card text-beige-900 dark:text-dark-text border border-beige-300 dark:border-dark-border rounded-sm focus:outline-none focus:border-beige-600 dark:focus:border-beige-500 focus:ring-2 focus:ring-beige-200 dark:focus:ring-beige-600/20 transition-all"
               />
             </div>
             
@@ -86,13 +86,13 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows="5"
-                className="w-full px-4 py-3 bg-beige-100 dark:bg-dark-card text-beige-900 dark:text-dark-text border border-beige-300 dark:border-dark-muted/20 rounded-sm focus:outline-none focus:border-beige-500 dark:focus:border-beige-600 transition-colors resize-none"
+                className="w-full px-4 py-3 bg-beige-100 dark:bg-dark-card text-beige-900 dark:text-dark-text border border-beige-300 dark:border-dark-border rounded-sm focus:outline-none focus:border-beige-600 dark:focus:border-beige-500 focus:ring-2 focus:ring-beige-200 dark:focus:ring-beige-600/20 transition-all resize-none"
               />
             </div>
             
             <button
               type="submit"
-              className="w-full px-8 py-3 bg-beige-800 dark:bg-dark-card text-beige-50 dark:text-dark-text text-sm font-light rounded-sm hover:bg-beige-900 dark:hover:bg-beige-700 transition-colors"
+              className="w-full px-8 py-3 bg-beige-800 dark:bg-beige-600 text-beige-50 dark:text-dark-bg text-sm font-light rounded-sm hover:bg-beige-900 dark:hover:bg-beige-500 shadow-sm dark:shadow-lg dark:shadow-beige-600/20 transition-all duration-300"
             >
               Send Message
             </button>
@@ -103,7 +103,7 @@ const Contact = () => {
               href="https://github.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-beige-700 dark:text-dark-muted hover:text-beige-900 dark:hover:text-dark-text transition-colors"
+              className="text-beige-700 dark:text-dark-muted hover:text-beige-900 dark:hover:text-dark-accent transition-colors"
               aria-label="GitHub"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -115,7 +115,7 @@ const Contact = () => {
               href="https://linkedin.com/in/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-beige-700 dark:text-dark-muted hover:text-beige-900 dark:hover:text-dark-text transition-colors"
+              className="text-beige-700 dark:text-dark-muted hover:text-beige-900 dark:hover:text-dark-accent transition-colors"
               aria-label="LinkedIn"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -125,7 +125,7 @@ const Contact = () => {
             
             <a
               href="mailto:your.email@example.com"
-              className="text-beige-700 dark:text-dark-muted hover:text-beige-900 dark:hover:text-dark-text transition-colors"
+              className="text-beige-700 dark:text-dark-muted hover:text-beige-900 dark:hover:text-dark-accent transition-colors"
               aria-label="Email"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

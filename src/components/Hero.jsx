@@ -10,7 +10,7 @@ const Hero = () => {
         className="max-w-3xl text-center"
       >
         <h2 className="text-5xl md:text-6xl font-light text-beige-900 dark:text-dark-text mb-6">
-          Hello, I'm <span className="font-medium">Your Name</span>
+          Hello, I'm  <span className="font-medium">Muhammad Sheik Nauman</span>
         </h2>
         
         <p className="text-lg md:text-xl text-beige-700 dark:text-dark-muted font-light mb-4">
@@ -21,12 +21,25 @@ const Hero = () => {
           I craft clean, functional web experiences with attention to detail and user-centered design.
         </p>
         
-        <button 
-          onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-          className="px-8 py-3 bg-beige-800 dark:bg-dark-card text-beige-50 dark:text-dark-text text-sm font-light rounded-sm hover:bg-beige-900 dark:hover:bg-beige-700 transition-colors"
-        >
-          View My Work
-        </button>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <button 
+            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-8 py-3 bg-beige-800 dark:bg-beige-600 text-beige-50 dark:text-dark-bg text-sm font-light rounded-sm hover:bg-beige-900 dark:hover:bg-beige-500 transition-all duration-300 shadow-sm dark:shadow-lg dark:shadow-beige-600/20"
+          >
+            View My Work
+          </button>
+          
+          <a
+            href="/resume.pdf"
+            download
+            className="px-8 py-3 border-2 border-beige-800 dark:border-beige-500 text-beige-800 dark:text-beige-400 text-sm font-light rounded-sm hover:bg-beige-800 hover:text-beige-50 dark:hover:bg-beige-600 dark:hover:border-beige-600 dark:hover:text-dark-bg transition-all duration-300 flex items-center gap-2"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Download Resume
+          </a>
+        </div>
       </motion.div>
     </section>
   )

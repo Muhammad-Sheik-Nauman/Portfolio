@@ -48,11 +48,11 @@ const GitHubGraph = () => {
   }
 
   const getColor = (count) => {
-    if (count === 0) return 'bg-beige-200 dark:bg-dark-bg'
-    if (count <= 2) return 'bg-beige-400 dark:bg-beige-700'
-    if (count <= 4) return 'bg-beige-500 dark:bg-beige-600'
-    if (count <= 6) return 'bg-beige-600 dark:bg-beige-500'
-    return 'bg-beige-700 dark:bg-beige-400'
+    if (count === 0) return 'bg-beige-200 dark:bg-dark-border'
+    if (count <= 2) return 'bg-beige-400 dark:bg-beige-700/60'
+    if (count <= 4) return 'bg-beige-500 dark:bg-beige-600/70'
+    if (count <= 6) return 'bg-beige-600 dark:bg-beige-500/80'
+    return 'bg-beige-700 dark:bg-beige-400/90'
   }
 
   return (
@@ -80,7 +80,7 @@ const GitHubGraph = () => {
                     {week.map((day, dayIndex) => (
                       <div
                         key={dayIndex}
-                        className={`w-3.5 h-3.5 rounded-sm ${getColor(day.count)} transition-colors hover:ring-1 hover:ring-beige-500`}
+                        className={`w-3.5 h-3.5 rounded-sm ${getColor(day.count)} transition-all hover:ring-2 hover:ring-beige-500 dark:hover:ring-beige-400 hover:scale-110`}
                         title={`${day.date}: ${day.count} contributions`}
                       />
                     ))}
