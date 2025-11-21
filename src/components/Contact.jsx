@@ -111,15 +111,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="mt-12 text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-beige-200 dark:bg-dark-card border border-beige-300 dark:border-dark-muted/20 rounded-full">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-beige-600 dark:bg-beige-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-beige-600 dark:bg-beige-500"></span>
-              </span>
-              <span className="text-xs text-beige-600 dark:text-dark-muted">
-                Available for freelance work
-              </span>
-            </div>
+            
           </motion.div>
         </motion.div>
       </div>
