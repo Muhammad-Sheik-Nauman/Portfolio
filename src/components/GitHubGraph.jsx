@@ -11,7 +11,7 @@ const GitHubGraph = () => {
 
   const fetchContributions = async () => {
     try {
-      const username = 'yourusername'
+      const username = 'Muhammad-Sheik-Nauman'
       const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`)
       const data = await response.json()
       
@@ -103,9 +103,7 @@ const GitHubGraph = () => {
             </div>
           )}
           
-          <p className="text-center text-sm text-beige-600 dark:text-dark-muted mt-6">
-            Last 6 months of contributions
-          </p>
+          
         </motion.div>
       </div>
     </section>

@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    title: 'Your Job Title',
-    company: 'Company Name',
+    title: 'Frontend Intern',
+    company: 'Joy Technologies',
     period: 'Start Date - Present',
     description: 'Describe your role, responsibilities, and key achievements in this position. Focus on the impact you made and technologies you worked with.',
     technologies: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS']
