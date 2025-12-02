@@ -14,7 +14,7 @@ const Contact = () => {
     },
     {
       name: 'LinkedIn',
-      handle: 'in/yourusername',
+      handle: 'Muhammad Sheik Nauman',
       url: 'https://www.linkedin.com/in/muhammad-sheik-nauman-811238293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"',
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
