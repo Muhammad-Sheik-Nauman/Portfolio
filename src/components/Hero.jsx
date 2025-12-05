@@ -29,9 +29,10 @@ const Hero = () => {
             View My Work
           </button>
           
+          {/* Put your resume file in the public/ folder (e.g. public/resume.pdf) or update the href to your file */}
           <a
-            href="/resume.pdf"
-            download
+            href="/resume_me.pdf"
+            download="Muhammad-Sheik-Nauman-Resume.pdf"
             className="px-8 py-3 border-2 border-beige-800 dark:border-beige-500 text-beige-800 dark:text-beige-400 text-sm font-light rounded-sm hover:bg-beige-800 hover:text-beige-50 dark:hover:bg-beige-600 dark:hover:border-beige-600 dark:hover:text-dark-bg transition-all duration-300 flex items-center gap-2"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
