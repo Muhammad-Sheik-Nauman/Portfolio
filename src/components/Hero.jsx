@@ -29,7 +29,7 @@ const Hero = () => {
             View My Work
           </button>
           
-          {/* Put your resume file in the public/ folder (e.g. public/resume.pdf) or update the href to your file */}
+   
           <a
             href="/resume_me.pdf"
             download="Muhammad-Sheik-Nauman-Resume.pdf"
