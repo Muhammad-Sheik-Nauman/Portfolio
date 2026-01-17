@@ -14,7 +14,7 @@ const About = () => {
           <div className="flex-shrink-0">
             <div className="w-48 h-48 rounded-lg overflow-hidden shadow-lg dark:shadow-2xl dark:shadow-black/50 bg-beige-300 dark:bg-dark-card ring-1 ring-beige-400/20 dark:ring-dark-border">
               <img 
-                src="https://via.placeholder.com/192" 
+                src="./profile.jpeg" 
                 alt="Profile" 
                 className="w-full h-full object-cover"
               />
