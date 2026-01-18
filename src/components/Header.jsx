@@ -25,7 +25,7 @@ const Header = () => {
       <header 
          className={`fixed z-50 transition-all duration-500 ease-in-out ${
     scrolled 
-      ? 'top-4 md:left-1/4 md:right-1/4 left-4 right-4 bg-white/40 dark:bg-dark-card/80 backdrop-blur-3xl shadow-[0_8px_32px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/30 dark:border-dark-border rounded-2xl'
+      ? 'top-4 md:left-1/4 md:right-1/4 left-4 right-4 bg-white/10 dark:bg-dark-card/30 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_32px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/30 dark:border-dark-border/40 rounded-2xl'
       : 'top-0 left-0 right-0 bg-transparent'
   }`}
       >
@@ -108,59 +108,53 @@ const Header = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
+            {/* Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-[60] bg-beige-50/95 dark:bg-dark-bg/98 backdrop-blur-3xl md:hidden"
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-[60] bg-black/30 md:hidden"
               onClick={() => setMobileMenuOpen(false)}
             />
-            
+            {/* Bottom Sheet */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-[70] flex items-center justify-center md:hidden"
+              initial={{ y: '100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '100%' }}
+              transition={{ type: 'tween', duration: 0.3 }}
+              className="fixed left-0 right-0 bottom-0 z-[70] bg-white dark:bg-dark-card rounded-t-3xl shadow-2xl md:hidden flex flex-col items-center pt-6 pb-10 px-6"
             >
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="absolute top-8 right-6 p-2 text-beige-700 dark:text-dark-text hover:text-beige-900 dark:hover:text-beige-300 transition-colors"
+                className="absolute top-4 right-6 p-2 text-beige-700 dark:text-dark-text hover:text-beige-900 dark:hover:text-beige-300 transition-colors"
                 aria-label="Close menu"
               >
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-
-              <nav className="flex flex-col items-center space-y-8">
-                <motion.button
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
+              <nav className="flex flex-col items-center gap-6 mt-4 w-full">
+                <button
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' })
                     setMobileMenuOpen(false)
                   }}
-                  className="text-4xl font-light text-beige-900 dark:text-dark-text hover:text-beige-700 dark:hover:text-dark-accent transition-colors"
+                  className="text-2xl font-medium text-beige-900 dark:text-dark-text hover:text-beige-700 dark:hover:text-dark-accent transition-colors w-full py-2"
                 >
                   Home
-                </motion.button>
-
-                {['About', 'Skills', 'Experience', 'Projects', 'Contact'].map((item, index) => (
-                  <motion.button
+                </button>
+                {['About', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
+                  <button
                     key={item}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.15 + index * 0.05 }}
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className="text-4xl font-light text-beige-700 dark:text-dark-muted hover:text-beige-900 dark:hover:text-dark-text transition-colors"
+                    className="text-2xl font-medium text-beige-700 dark:text-dark-muted hover:text-beige-900 dark:hover:text-dark-text transition-colors w-full py-2"
                   >
                     {item}
-                  </motion.button>
+                  </button>
                 ))}
               </nav>
+              <div className="w-12 h-1.5 bg-beige-200 dark:bg-dark-bg rounded-full mt-6 mb-2 mx-auto" />
             </motion.div>
           </>
         )}
