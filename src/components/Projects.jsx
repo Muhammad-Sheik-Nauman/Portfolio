@@ -2,30 +2,30 @@ import { motion } from 'framer-motion'
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    title: 'FinWise',
+    description: 'AI-powered finance platform featuring secure authentication, expense tracking, smart dashboards, and automated financial insights.',
+    tech: ['Next Js', 'Gemini AI', 'Tailwind', 'Prisma','Shadcn UI'],
     github: 'https://github.com',
     demo: 'https://example.com'
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates and team features.',
-    tech: ['React', 'Firebase', 'Tailwind CSS'],
+    title: 'Whispr',
+    description: 'WHISPR is an anonymous confession and message platform where users can send and receive honest or secret thoughts without revealing their identity.',
+    tech: ['MongoDB', 'Express', 'React js','node'],
     github: 'https://github.com',
     demo: 'https://example.com'
   },
   {
-    title: 'Weather Dashboard',
-    description: 'A clean weather application that provides forecasts and weather data visualization.',
-    tech: ['React', 'OpenWeather API', 'Chart.js'],
+    title: 'DropDeal',
+    description: 'Smart price tracker app that monitors product prices and sends instant alerts when they drop',
+    tech: ['React', 'Next JS', 'Supabase', 'Firecrawl', 'Shadcn'],
     github: 'https://github.com',
     demo: 'https://example.com'
   },
   {
-    title: 'Portfolio Generator',
-    description: 'A tool that helps developers create beautiful portfolio websites with customizable templates.',
-    tech: ['React', 'Next.js', 'Tailwind CSS'],
+    title: 'Comming Soon...',
+    description: '',
+    tech: [''],
     github: 'https://github.com',
     demo: 'https://example.com'
   }

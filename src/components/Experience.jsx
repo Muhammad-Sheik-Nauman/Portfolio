@@ -4,9 +4,16 @@ const experiences = [
   {
     title: 'Frontend Intern',
     company: 'Joy Technologies',
-    period: 'Start Date - Present',
-    description: 'Describe your role, responsibilities, and key achievements in this position. Focus on the impact you made and technologies you worked with.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS']
+    period: 'Sep - Oct',
+    description: 'Worked as a Bubble Intern where I learned and applied no-code development concepts to build basic web applications. Created simple pages, forms, and workflows, managed basic database structures, and gained hands-on experience in building functional apps.',
+    technologies: ['Bubble']
+  },
+  {
+   title: 'Open Source',
+    company: 'Github',
+    period: '',
+    description: 'Contributed to open-source projects by improving UI themes, fixing responsive design issues, and enhancing overall user experience through clean, maintainable changes.',
+    technologies: ['JavaScript','Tailwind CSS','Git'] 
   }
 ]
 
