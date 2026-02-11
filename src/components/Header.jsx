@@ -25,8 +25,8 @@ const Header = () => {
       <header 
          className={`fixed z-50 transition-all duration-500 ease-in-out ${
     scrolled 
-      ? 'top-4 md:left-1/4 md:right-1/4 left-4 right-4 bg-white/10 dark:bg-dark-card/30 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_32px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-white/30 dark:border-dark-border/40 rounded-2xl'
-      : 'top-0 left-0 right-0 bg-transparent'
+      ? 'top-4 md:left-1/4 md:right-1/4 left-4 right-4 bg-white/10 dark:bg-dark-bg/90 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_32px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.7)] border border-beige-200 dark:border-beige-700/30 rounded-2xl'
+      : 'top-0 left-0 right-0 bg-transparent border border-beige-200/40 dark:border-beige-700/20'
   }`}
       >
         <nav className={`mx-auto px-6 flex items-center justify-between transition-all duration-500 ${
@@ -34,7 +34,7 @@ const Header = () => {
         }`}>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className={`group flex items-center gap-2.5 text-beige-900 dark:text-dark-text hover:opacity-70 transition-all duration-500 ${
+            className={`group flex items-center gap-2.5 text-beige-900 dark:text-beige-100 hover:opacity-70 transition-all duration-500 ${
               scrolled ? 'text-base' : 'text-lg'
             }`}
           >
@@ -51,12 +51,12 @@ const Header = () => {
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className={`font-normal text-beige-700 dark:text-dark-muted hover:text-beige-900 dark:hover:text-dark-text transition-all duration-300 relative group ${
+                    className={`font-normal text-beige-700 dark:text-beige-100 hover:text-beige-900 dark:hover:text-beige-300 transition-all duration-300 relative group ${
                       scrolled ? 'text-xs' : 'text-sm'
                     }`}
                   >
                     {item}
-                    <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-beige-900 dark:bg-dark-text transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-beige-900 dark:bg-beige-300 transition-all duration-300 group-hover:w-full"></span>
                   </button>
                 </li>
               ))}
@@ -64,7 +64,7 @@ const Header = () => {
             
             <button
               onClick={toggleTheme}
-              className={`rounded-lg hover:bg-beige-200/60 dark:hover:bg-dark-card/60 transition-all duration-300 ${
+              className={`rounded-lg hover:bg-beige-200/60 dark:hover:bg-beige-700/40 transition-all duration-300 ${
                 scrolled ? 'p-1.5' : 'p-2'
               }`}
               aria-label="Toggle theme"
@@ -91,13 +91,13 @@ const Header = () => {
               }`}
               aria-label="Toggle menu"
             >
-              <span className={`block bg-beige-700 dark:bg-dark-text transition-all duration-300 ${
+              <span className={`block bg-beige-700 dark:bg-beige-100 transition-all duration-300 ${
                 scrolled ? 'w-5 h-[1.5px]' : 'w-6 h-[2px]'
               }`}></span>
-              <span className={`block bg-beige-700 dark:bg-dark-text transition-all duration-300 ${
+              <span className={`block bg-beige-700 dark:bg-beige-100 transition-all duration-300 ${
                 scrolled ? 'w-5 h-[1.5px]' : 'w-6 h-[2px]'
               }`}></span>
-              <span className={`block bg-beige-700 dark:bg-dark-text transition-all duration-300 ${
+              <span className={`block bg-beige-700 dark:bg-beige-100 transition-all duration-300 ${
                 scrolled ? 'w-5 h-[1.5px]' : 'w-6 h-[2px]'
               }`}></span>
             </button>
@@ -123,7 +123,7 @@ const Header = () => {
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="fixed left-0 right-0 bottom-0 z-[70] bg-white dark:bg-dark-card rounded-t-3xl shadow-2xl md:hidden flex flex-col items-center pt-6 pb-10 px-6"
+              className="fixed left-0 right-0 bottom-0 z-[70] bg-white dark:bg-dark-bg rounded-t-3xl shadow-2xl md:hidden flex flex-col items-center pt-6 pb-10 px-6"
             >
               <button
                 onClick={() => setMobileMenuOpen(false)}
@@ -140,7 +140,7 @@ const Header = () => {
                     window.scrollTo({ top: 0, behavior: 'smooth' })
                     setMobileMenuOpen(false)
                   }}
-                  className="text-2xl font-medium text-beige-900 dark:text-dark-text hover:text-beige-700 dark:hover:text-dark-accent transition-colors w-full py-2"
+                  className="text-2xl font-medium text-beige-900 dark:text-beige-100 hover:text-beige-700 dark:hover:text-beige-300 transition-colors w-full py-2"
                 >
                   Home
                 </button>
@@ -148,13 +148,13 @@ const Header = () => {
                   <button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className="text-2xl font-medium text-beige-700 dark:text-dark-muted hover:text-beige-900 dark:hover:text-dark-text transition-colors w-full py-2"
+                    className="text-2xl font-medium text-beige-700 dark:text-beige-100 hover:text-beige-900 dark:hover:text-beige-300 transition-colors w-full py-2"
                   >
                     {item}
                   </button>
                 ))}
               </nav>
-              <div className="w-12 h-1.5 bg-beige-200 dark:bg-dark-bg rounded-full mt-6 mb-2 mx-auto" />
+              <div className="w-12 h-1.5 bg-beige-200 dark:bg-beige-700 rounded-full mt-6 mb-2 mx-auto" />
             </motion.div>
           </>
         )}
