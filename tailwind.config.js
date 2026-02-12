@@ -20,9 +20,9 @@ export default {
           900: '#4a3f32',
         },
         dark: {
-          bg: '#0f0e0d',
-          card: '#1a1816',
-          border: '#2d2a27',
+          bg: '#202023',
+          card: '#2d2d30',
+          border: '#3f3f46',
           text: '#f3ede3',
           muted: '#b39c7d',
           accent: '#d9c8ab',

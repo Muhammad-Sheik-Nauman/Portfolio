@@ -5,12 +5,30 @@ import { useTheme } from '../context/ThemeContext'
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
   const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
+
+      // Track active section
+      const sections = ['home', 'projects', 'skills', 'experience', 'about', 'contact']
+      const scrollPosition = window.scrollY + 150
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          const { offsetTop, offsetHeight } = element
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId)
+            break
+          }
+        }
+      }
     }
+
+    handleScroll() // Initial check
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -22,21 +40,18 @@ const Header = () => {
 
   return (
     <>
-      <header 
-         className={`fixed z-50 transition-all duration-500 ease-in-out ${
-    scrolled 
-      ? 'top-4 md:left-1/4 md:right-1/4 left-4 right-4 bg-white/10 dark:bg-dark-bg/90 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_32px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.7)] border border-beige-200 dark:border-beige-700/30 rounded-2xl'
-      : 'top-0 left-0 right-0 bg-transparent border border-beige-200/40 dark:border-beige-700/20'
-  }`}
+      <header
+        className={`fixed z-50 transition-all duration-500 ease-in-out ${scrolled
+          ? 'top-4 md:left-1/4 md:right-1/4 left-4 right-4 bg-white/40 dark:bg-dark-bg/90 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_32px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.7)] border border-beige-200 dark:border-beige-700/30 rounded-2xl'
+          : 'top-0 left-0 right-0 bg-transparent border border-beige-200/40 dark:border-beige-700/20'
+          }`}
       >
-        <nav className={`mx-auto px-6 flex items-center justify-between transition-all duration-500 ${
-          scrolled ? 'py-2.5 max-w-4xl' : 'py-5 max-w-7xl'
-        }`}>
+        <nav className={`mx-auto px-6 flex items-center justify-between transition-all duration-500 ${scrolled ? 'py-2.5 max-w-4xl' : 'py-5 max-w-7xl'
+          }`}>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className={`group flex items-center gap-2.5 text-beige-900 dark:text-beige-100 hover:opacity-70 transition-all duration-500 ${
-              scrolled ? 'text-base' : 'text-lg'
-            }`}
+            className={`group flex items-center gap-2.5 text-beige-900 dark:text-beige-100 hover:opacity-70 transition-all duration-500 ${scrolled ? 'text-base' : 'text-lg'
+              }`}
           >
             <div className="flex items-center gap-1">
               <span className="font-thin text-beige-600 dark:text-dark-muted">{`{`}</span>
@@ -44,41 +59,43 @@ const Header = () => {
               <span className="font-thin text-beige-600 dark:text-dark-muted">{`}`}</span>
             </div>
           </button>
-          
+
           <div className="flex items-center gap-4">
             <ul className="hidden md:flex items-center gap-10">
-              {['About', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
+              {['Projects', 'Skills', 'Experience', 'About', 'Contact'].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className={`font-normal text-beige-700 dark:text-beige-100 hover:text-beige-900 dark:hover:text-beige-300 transition-all duration-300 relative group ${
-                      scrolled ? 'text-xs' : 'text-sm'
-                    }`}
+                    className={`font-normal transition-all duration-300 relative group ${scrolled ? 'text-xs' : 'text-sm'
+                      } ${activeSection === item.toLowerCase()
+                        ? 'text-beige-900 dark:text-beige-100 font-medium'
+                        : 'text-beige-700 dark:text-beige-100 hover:text-beige-900 dark:hover:text-beige-300'
+                      }`}
                   >
                     {item}
-                    <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-beige-900 dark:bg-beige-300 transition-all duration-300 group-hover:w-full"></span>
+                    <span className={`absolute -bottom-1 left-0 h-[2px] bg-beige-900 dark:bg-beige-300 transition-all duration-300 ${activeSection === item.toLowerCase()
+                      ? 'w-full'
+                      : 'w-0 group-hover:w-full'
+                      }`}></span>
                   </button>
                 </li>
               ))}
             </ul>
-            
+
             <button
               onClick={toggleTheme}
-              className={`rounded-lg hover:bg-beige-200/60 dark:hover:bg-beige-700/40 transition-all duration-300 ${
-                scrolled ? 'p-1.5' : 'p-2'
-              }`}
+              className={`rounded-lg hover:bg-beige-200/60 dark:hover:bg-beige-700/40 transition-all duration-300 ${scrolled ? 'p-1.5' : 'p-2'
+                }`}
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
-                <svg className={`text-beige-700 transition-all duration-300 ${
-                  scrolled ? 'w-4 h-4' : 'w-5 h-5'
-                }`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className={`text-beige-700 transition-all duration-300 ${scrolled ? 'w-4 h-4' : 'w-5 h-5'
+                  }`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                 </svg>
               ) : (
-                <svg className={`text-dark-text transition-all duration-300 ${
-                  scrolled ? 'w-4 h-4' : 'w-5 h-5'
-                }`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className={`text-dark-text transition-all duration-300 ${scrolled ? 'w-4 h-4' : 'w-5 h-5'
+                  }`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               )}
@@ -86,20 +103,13 @@ const Header = () => {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`md:hidden flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ${
-                scrolled ? 'w-7 h-7' : 'w-8 h-8'
-              }`}
+              className={`md:hidden flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ${scrolled ? 'w-7 h-7' : 'w-8 h-8'
+                }`}
               aria-label="Toggle menu"
             >
-              <span className={`block bg-beige-700 dark:bg-beige-100 transition-all duration-300 ${
-                scrolled ? 'w-5 h-[1.5px]' : 'w-6 h-[2px]'
-              }`}></span>
-              <span className={`block bg-beige-700 dark:bg-beige-100 transition-all duration-300 ${
-                scrolled ? 'w-5 h-[1.5px]' : 'w-6 h-[2px]'
-              }`}></span>
-              <span className={`block bg-beige-700 dark:bg-beige-100 transition-all duration-300 ${
-                scrolled ? 'w-5 h-[1.5px]' : 'w-6 h-[2px]'
-              }`}></span>
+              <svg className={`text-beige-900 dark:text-dark-text transition-all duration-300 ${scrolled ? 'w-6 h-6' : 'w-7 h-7'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M10 12h10M4 18h16" />
+              </svg>
             </button>
           </div>
         </nav>
@@ -108,13 +118,13 @@ const Header = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
-            {/* Overlay */}
+            {/* Backdrop Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-[60] bg-black/30 md:hidden"
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm md:hidden"
               onClick={() => setMobileMenuOpen(false)}
             />
             {/* Bottom Sheet */}
@@ -122,39 +132,52 @@ const Header = () => {
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
-              transition={{ type: 'tween', duration: 0.3 }}
-              className="fixed left-0 right-0 bottom-0 z-[70] bg-white dark:bg-dark-bg rounded-t-3xl shadow-2xl md:hidden flex flex-col items-center pt-6 pb-10 px-6"
+              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              className="fixed left-0 right-0 bottom-0 z-[70] bg-white/95 dark:bg-dark-card/95 backdrop-blur-xl rounded-t-[2rem] shadow-[0_-8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_-8px_32px_rgba(0,0,0,0.6)] md:hidden border-t border-beige-200 dark:border-beige-700/30"
             >
+              {/* Drag Handle */}
+              <div className="flex justify-center pt-4 pb-2">
+                <div className="w-12 h-1.5 bg-beige-300 dark:bg-beige-700 rounded-full" />
+              </div>
+
+              {/* Close Button */}
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="absolute top-4 right-6 p-2 text-beige-700 dark:text-dark-text hover:text-beige-900 dark:hover:text-beige-300 transition-colors"
+                className="absolute top-6 right-6 p-2 text-beige-700 dark:text-dark-text hover:text-beige-900 dark:hover:text-beige-300 transition-colors rounded-lg hover:bg-beige-100 dark:hover:bg-beige-800/30"
                 aria-label="Close menu"
               >
-                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-              <nav className="flex flex-col items-center gap-6 mt-4 w-full">
+
+              {/* Navigation */}
+              <nav className="flex flex-col items-center gap-1 px-8 pb-10 pt-4">
                 <button
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' })
                     setMobileMenuOpen(false)
                   }}
-                  className="text-2xl font-medium text-beige-900 dark:text-beige-100 hover:text-beige-700 dark:hover:text-beige-300 transition-colors w-full py-2"
+                  className={`text-xl font-light transition-all duration-200 w-full py-4 px-6 rounded-xl ${activeSection === 'home'
+                    ? 'text-beige-900 dark:text-beige-100 bg-beige-100 dark:bg-beige-800/40 font-medium'
+                    : 'text-beige-700 dark:text-beige-300 hover:text-beige-900 dark:hover:text-beige-100 hover:bg-beige-50 dark:hover:bg-beige-800/20'
+                    }`}
                 >
                   Home
                 </button>
-                {['About', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
+                {['Projects', 'Skills', 'Experience', 'About', 'Contact'].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className="text-2xl font-medium text-beige-700 dark:text-beige-100 hover:text-beige-900 dark:hover:text-beige-300 transition-colors w-full py-2"
+                    className={`text-xl font-light transition-all duration-200 w-full py-4 px-6 rounded-xl ${activeSection === item.toLowerCase()
+                      ? 'text-beige-900 dark:text-beige-100 bg-beige-100 dark:bg-beige-800/40 font-medium'
+                      : 'text-beige-700 dark:text-beige-300 hover:text-beige-900 dark:hover:text-beige-100 hover:bg-beige-50 dark:hover:bg-beige-800/20'
+                      }`}
                   >
                     {item}
                   </button>
                 ))}
               </nav>
-              <div className="w-12 h-1.5 bg-beige-200 dark:bg-beige-700 rounded-full mt-6 mb-2 mx-auto" />
             </motion.div>
           </>
         )}

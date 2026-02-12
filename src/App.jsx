@@ -16,11 +16,11 @@ function App() {
         <Header />
         <main>
           <Hero />
-          <About />
-          <Skills />
-          <Experience />
           <Projects />
           <GitHubGraph />
+          <Skills />
+          <Experience />
+          <About />
           <Contact />
         </main>
         <Footer />

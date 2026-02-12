@@ -1,81 +1,96 @@
-import { motion } from 'framer-motion'
-
 const experiences = [
   {
     title: 'Frontend Intern',
     company: 'Joy Technologies',
-    period: 'Sep - Oct',
-    description: 'Worked as a Bubble Intern where I learned and applied no-code development concepts to build basic web applications. Created simple pages, forms, and workflows, managed basic database structures, and gained hands-on experience in building functional apps.',
+    period: 'Sep - Oct 2024',
+    description: ' as a Bubble Intern where I earned and applied no-code development concepts to build basic web applications. Created simple pages, forms, and workflows, managed basic database structures, and gained hands-on experience in building functional apps.',
     technologies: ['Bubble']
   },
   {
-   title: 'Open Source',
+    title: 'Open Source',
     company: 'Github',
-    period: '',
+    period: 'Ongoing',
     description: 'Contributed to open-source projects by improving UI themes, fixing responsive design issues, and enhancing overall user experience through clean, maintainable changes.',
-    technologies: ['JavaScript','Tailwind CSS','Git'] 
+    technologies: ['JavaScript', 'Tailwind CSS', 'Git']
   }
 ]
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-3xl font-light text-beige-900 dark:text-dark-text mb-12 text-center">
+    <section id="experience" className="py-16 px-6 border-b border-beige-400 dark:border-beige-800">
+      <div className="max-w-5xl mx-auto">
+        {/* Section Header */}
+        <div className="mb-12">
+          <h2 className="text-6xl md:text-7xl font-extralight text-beige-900 dark:text-dark-text tracking-tight mb-4">
             Experience
-          </h3>
-          
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative pl-8 border-l-2 border-beige-300 dark:border-beige-600/40"
-              >
-                <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-beige-600 dark:bg-beige-500 ring-4 ring-beige-50 dark:ring-dark-bg"></div>
-                
-                <div className="pb-8">
-                  <h4 className="text-xl font-medium text-beige-900 dark:text-dark-text mb-1">
-                    {exp.title}
-                  </h4>
-                  
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-sm text-beige-700 dark:text-dark-muted">
+          </h2>
+          <p className="text-lg text-beige-600 dark:text-dark-muted font-light">
+            Where I've worked and contributed
+          </p>
+        </div>
+
+        {/* Experience Cards */}
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className="group border border-beige-300 dark:border-dark-border hover:border-beige-400 dark:hover:border-dark-accent transition-colors duration-200"
+            >
+              <div className="p-8 md:p-10">
+                {/* Header Row */}
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6 pb-6 border-b border-beige-200 dark:border-dark-border">
+                  <div className="flex-1">
+                    <h3 className="text-2xl md:text-3xl font-light text-beige-900 dark:text-dark-text mb-2">
+                      {exp.title}
+                    </h3>
+                    <div className="text-base text-beige-700 dark:text-dark-muted">
                       {exp.company}
-                    </span>
-                    <span className="text-sm text-beige-600 dark:text-dark-muted/70">
-                      {exp.period}
-                    </span>
+                    </div>
                   </div>
-                  
-                  <p className="text-sm text-beige-700 dark:text-dark-muted font-light leading-relaxed mb-4">
-                    {exp.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map(tech => (
-                      <span 
-                        key={tech}
-                        className="text-xs px-3 py-1 bg-beige-200 dark:bg-dark-bg text-beige-800 dark:text-dark-accent border border-transparent dark:border-dark-border rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+
+                  <div className="text-sm uppercase tracking-widest text-beige-600 dark:text-dark-muted md:text-right">
+                    {exp.period}
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
+                {/* Description */}
+                <p className="text-base text-beige-700 dark:text-dark-muted font-light leading-relaxed mb-6">
+                  {exp.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2">
+                  {exp.technologies.map(tech => (
+                    <span
+                      key={tech}
+                      className="text-xs uppercase tracking-wider px-3 py-1.5 text-beige-600 dark:text-dark-muted border border-beige-300 dark:border-dark-border hover:border-beige-500 dark:hover:border-dark-accent transition-colors duration-200"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Add More Link */}
+        <div className="mt-16 text-center">
+          <a
+            href="#"
+            className="group inline-flex items-center gap-3 text-sm uppercase tracking-widest text-beige-700 dark:text-dark-muted hover:text-beige-900 dark:hover:text-dark-text transition-colors duration-200"
+          >
+            <span className="relative">
+              View Resume
+              <span className="absolute bottom-0 left-0 w-full h-px bg-beige-300 dark:bg-dark-border">
+                <span className="absolute inset-0 bg-beige-900 dark:bg-dark-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center" />
+              </span>
+            </span>
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   )
