@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-16 border-b border-beige-400 dark:border-beige-800">
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 py-20 md:pt-32 md:pb-16 border-b border-beige-400 dark:border-beige-800">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ const Hero = () => {
             I turn ideas into fast, secure, and user-focused web products using modern full-stack technologies.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-8">
             <button
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-3 bg-beige-800 dark:bg-beige-600 text-beige-50 dark:text-dark-bg text-sm font-light rounded-sm hover:bg-beige-900 dark:hover:bg-beige-500 transition-all duration-300 shadow-sm dark:shadow-lg dark:shadow-beige-600/20"
@@ -46,8 +46,8 @@ const Hero = () => {
         </div>
 
         {/* Image Content */}
-        <div className="order-1 md:order-2 flex justify-center md:justify-end">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 bg-white dark:bg-[#2a2826] p-3 rounded-[2rem] shadow-2xl border border-beige-200 dark:border-beige-800 transform rotate-3 hover:rotate-0 transition-all duration-500">
+        <div className="order-1 md:order-2 flex justify-center md:justify-end mt-6 md:mt-0">
+          <div className="relative w-56 h-56 md:w-80 md:h-80 bg-white dark:bg-[#2a2826] p-3 rounded-[2rem] shadow-2xl border border-beige-200 dark:border-beige-800 transform rotate-3 hover:rotate-0 transition-all duration-500">
             <img
               src="./profile.jpeg"
               alt="Muhammad Sheik Nauman"

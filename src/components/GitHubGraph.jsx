@@ -146,7 +146,7 @@ const GitHubGraph = () => {
 
             {/* Contribution Graph */}
             <div className="border border-beige-300 dark:border-dark-border p-8 md:p-12">
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto pb-10">
                 <div className="inline-flex gap-2 min-w-full justify-center">
                   {contributions.map((week, weekIndex) => (
                     <div key={weekIndex} className="flex flex-col gap-2">
@@ -164,7 +164,7 @@ const GitHubGraph = () => {
                 </div>
 
                 {/* Legend */}
-                <div className="flex items-center justify-center gap-3 mt-10 pt-8 border-t border-beige-300 dark:border-dark-border">
+                <div className="flex items-center justify-center gap-3 mt-12 pt-8 border-t border-beige-300 dark:border-dark-border">
                   <span className="text-xs uppercase tracking-wider text-beige-600 dark:text-dark-muted">Less</span>
                   <div className="flex gap-2">
                     {[0, 2, 4, 6, 8].map((level) => (

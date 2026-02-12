@@ -60,8 +60,8 @@ const Header = () => {
             </div>
           </button>
 
-          <div className="flex items-center gap-4">
-            <ul className="hidden md:flex items-center gap-10">
+          <div className="flex items-center gap-2">
+            <ul className="hidden md:flex items-center gap-6">
               {['Projects', 'Skills', 'Experience', 'About', 'Contact'].map((item) => (
                 <li key={item}>
                   <button
