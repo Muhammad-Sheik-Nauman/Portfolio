@@ -61,7 +61,7 @@ const Header = () => {
           </button>
 
           <div className="flex items-center gap-2">
-            <ul className="hidden md:flex items-center gap-6">
+            <ul className="hidden lg:flex items-center gap-6">
               {['Projects', 'Skills', 'Experience', 'About', 'Contact'].map((item) => (
                 <li key={item}>
                   <button
@@ -97,13 +97,14 @@ const Header = () => {
                 <svg className={`text-dark-text transition-all duration-300 ${scrolled ? 'w-4 h-4' : 'w-5 h-5'
                   }`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               )}
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`md:hidden flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ${scrolled ? 'w-7 h-7' : 'w-8 h-8'
+              className={`lg:hidden flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ${scrolled ? 'w-7 h-7' : 'w-8 h-8'
                 }`}
               aria-label="Toggle menu"
             >
@@ -124,7 +125,7 @@ const Header = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm lg:hidden"
               onClick={() => setMobileMenuOpen(false)}
             />
             {/* Bottom Sheet */}
@@ -133,7 +134,7 @@ const Header = () => {
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed left-0 right-0 bottom-0 z-[70] bg-white/95 dark:bg-dark-card/95 backdrop-blur-xl rounded-t-[2rem] shadow-[0_-8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_-8px_32px_rgba(0,0,0,0.6)] md:hidden border-t border-beige-200 dark:border-beige-700/30"
+              className="fixed left-0 right-0 bottom-0 z-[70] bg-white/95 dark:bg-dark-card/95 backdrop-blur-xl rounded-t-[2rem] shadow-[0_-8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_-8px_32px_rgba(0,0,0,0.6)] lg:hidden border-t border-beige-200 dark:border-beige-700/30"
             >
               {/* Drag Handle */}
               <div className="flex justify-center pt-4 pb-2">
