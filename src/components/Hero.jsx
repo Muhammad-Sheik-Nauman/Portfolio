@@ -49,7 +49,7 @@ const Hero = () => {
         <div className="order-1 md:order-2 flex justify-center md:justify-end mt-6 md:mt-0">
           <div className="relative w-56 h-56 md:w-80 md:h-80 bg-white dark:bg-[#2a2826] p-3 rounded-[2rem] shadow-2xl border border-beige-200 dark:border-beige-800 transform rotate-3 hover:rotate-0 transition-all duration-500">
             <img
-              src="./profile.jpeg"
+              src="./profile.webp"
               alt="Muhammad Sheik Nauman"
               className="w-full h-full object-cover rounded-[1.5rem]"
               fetchPriority="high"
