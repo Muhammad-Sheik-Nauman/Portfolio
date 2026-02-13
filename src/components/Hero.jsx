@@ -11,17 +11,17 @@ const Hero = () => {
       >
         {/* Text Content */}
         <div className="order-2 md:order-1 text-center md:text-left">
-          <h2 className="text-5xl md:text-7xl font-light text-beige-900 dark:text-dark-text mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-light text-beige-900 dark:text-dark-text mb-6 leading-tight">
             Hello, I'm <br />
             <span className="font-medium">Muhammad Sheik Nauman</span>
-          </h2>
+          </h1>
 
           <p className="text-xl md:text-2xl text-beige-700 dark:text-dark-muted font-light mb-6">
             Full Stack Developer
           </p>
 
           <p className="text-base md:text-lg text-beige-600 dark:text-dark-muted font-light max-w-lg mx-auto md:mx-0 mb-10 leading-relaxed">
-            I turn ideas into fast, secure, and user-focused web products using modern full-stack technologies.
+            I build responsive, scalable web applications using modern JavaScript, React, Node.js, and full-stack technologies. Turning ideas into fast, secure, and user-focused products.
           </p>
 
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-8">

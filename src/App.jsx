@@ -1,4 +1,5 @@
 import { ThemeProvider } from './context/ThemeContext'
+import SEO from './components/SEO'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -12,6 +13,7 @@ import Footer from './components/Footer'
 function App() {
   return (
     <ThemeProvider>
+      <SEO />
       <div className="min-h-screen bg-beige-50 dark:bg-dark-bg transition-colors duration-300">
         <Header />
         <main>
