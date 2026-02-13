@@ -9,19 +9,29 @@ import GitHubGraph from './components/GitHubGraph'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
+import { Routes, Route } from 'react-router-dom'
+import NotFound from './components/NotFound'
+
 function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-beige-50 dark:bg-dark-bg transition-colors duration-300">
         <Header />
         <main>
-          <Hero />
-          <Projects />
-          <GitHubGraph />
-          <Skills />
-          <Experience />
-          <About />
-          <Contact />
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Hero />
+                <Projects />
+                <GitHubGraph />
+                <Skills />
+                <Experience />
+                <About />
+                <Contact />
+              </>
+            } />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </main>
         <Footer />
       </div>
