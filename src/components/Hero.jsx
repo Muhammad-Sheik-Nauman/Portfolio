@@ -52,6 +52,8 @@ const Hero = () => {
               src="./profile.jpeg"
               alt="Muhammad Sheik Nauman"
               className="w-full h-full object-cover rounded-[1.5rem]"
+              fetchPriority="high"
+              loading="eager"
             />
           </div>
         </div>
