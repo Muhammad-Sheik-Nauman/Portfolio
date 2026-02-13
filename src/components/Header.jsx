@@ -124,8 +124,8 @@ const Header = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm lg:hidden"
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="fixed inset-0 z-[60] bg-black/50 lg:hidden"
               onClick={() => setMobileMenuOpen(false)}
             />
             {/* Bottom Sheet */}
@@ -133,8 +133,8 @@ const Header = () => {
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200, mass: 0.8 }}
-              className="fixed left-0 right-0 bottom-0 z-[70] bg-white/95 dark:bg-dark-card/95 backdrop-blur-xl rounded-t-[2rem] shadow-[0_-8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_-8px_32px_rgba(0,0,0,0.6)] lg:hidden border-t border-beige-200 dark:border-beige-700/30"
+              transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
+              className="fixed left-0 right-0 bottom-0 z-[70] bg-white/95 dark:bg-dark-card/95 backdrop-blur-md rounded-t-[2rem] shadow-[0_-8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_-8px_32px_rgba(0,0,0,0.6)] lg:hidden border-t border-beige-200 dark:border-beige-700/30 will-change-transform"
             >
               {/* Drag Handle */}
               <div className="flex justify-center pt-4 pb-2">
