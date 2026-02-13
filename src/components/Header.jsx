@@ -133,7 +133,7 @@ const Header = () => {
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
-              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200, mass: 0.8 }}
               className="fixed left-0 right-0 bottom-0 z-[70] bg-white/95 dark:bg-dark-card/95 backdrop-blur-xl rounded-t-[2rem] shadow-[0_-8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_-8px_32px_rgba(0,0,0,0.6)] lg:hidden border-t border-beige-200 dark:border-beige-700/30"
             >
               {/* Drag Handle */}
@@ -153,7 +153,7 @@ const Header = () => {
               </button>
 
               {/* Navigation */}
-              <nav className="flex flex-col items-center gap-1 px-8 pb-10 pt-4">
+              <nav className="flex flex-col items-center gap-1 px-8 pb-10 pt-8">
                 <button
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' })
