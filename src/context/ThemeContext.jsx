@@ -21,14 +21,36 @@ export const ThemeProvider = ({ children }) => {
     return prefersDark ? 'dark' : 'light'
   })
 
+  const [isManuallySet, setIsManuallySet] = useState(() => {
+    return localStorage.getItem('theme') !== null
+  })
+
   useEffect(() => {
     const root = window.document.documentElement
     root.classList.remove('light', 'dark')
     root.classList.add(theme)
-    localStorage.setItem('theme', theme)
-  }, [theme])
+
+    // Only save to localStorage if user manually set the theme
+    if (isManuallySet) {
+      localStorage.setItem('theme', theme)
+    }
+  }, [theme, isManuallySet])
+
+  // Listen for system theme changes
+  useEffect(() => {
+    if (!isManuallySet) {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+      const handleChange = (e) => {
+        setTheme(e.matches ? 'dark' : 'light')
+      }
+
+      mediaQuery.addEventListener('change', handleChange)
+      return () => mediaQuery.removeEventListener('change', handleChange)
+    }
+  }, [isManuallySet])
 
   const toggleTheme = () => {
+    setIsManuallySet(true)
     setTheme(prev => prev === 'light' ? 'dark' : 'light')
   }
 
