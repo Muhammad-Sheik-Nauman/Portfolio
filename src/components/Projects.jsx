@@ -3,22 +3,22 @@ const projects = [
     title: 'FinWise',
     description: 'AI-powered finance platform featuring secure authentication, expense tracking, smart dashboards, and automated financial insights.',
     tech: ['Next Js', 'Gemini AI', 'Tailwind', 'Prisma', 'Shadcn UI'],
-    github: 'https://github.com',
+    github: 'https://github.com/Muhammad-Sheik-Nauman/Finwise',
     demo: 'https://example.com'
   },
   {
     title: 'Whispr',
     description: 'WHISPR is an anonymous confession and message platform where users can send and receive honest or secret thoughts without revealing their identity.',
     tech: ['MongoDB', 'Express', 'React js', 'node'],
-    github: 'https://github.com',
-    demo: 'https://example.com'
+    github: 'https://github.com/Muhammad-Sheik-Nauman/Whispr-a_anonymous_confession_platform',
+    demo: 'https://whispr-official.vercel.app/'
   },
   {
     title: 'DropDeal',
     description: 'Smart price tracker app that monitors product prices and sends instant alerts when they drop',
     tech: ['React', 'Next JS', 'Supabase', 'Firecrawl', 'Shadcn'],
-    github: 'https://github.com',
-    demo: 'https://example.com'
+    github: 'https://github.com/Muhammad-Sheik-Nauman/DropDeal',
+    demo: 'https://dropdeal.vercel.app/'
   },
   {
     title: 'Coming Soon...',
