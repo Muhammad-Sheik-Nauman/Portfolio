@@ -52,6 +52,7 @@ const Header = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className={`group flex items-center gap-2.5 text-beige-900 dark:text-beige-100 hover:opacity-70 transition-all duration-500 ${scrolled ? 'text-base' : 'text-lg'
               }`}
+            aria-label="Muhammad Sheik Nauman Home"
           >
             <div className="flex items-center gap-1">
               <span className="font-thin text-beige-600 dark:text-dark-muted">{`{`}</span>
