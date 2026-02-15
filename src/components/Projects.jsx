@@ -4,7 +4,7 @@ const projects = [
     description: 'AI-powered finance platform featuring secure authentication, expense tracking, smart dashboards, and automated financial insights.',
     tech: ['Next Js', 'Gemini AI', 'Tailwind', 'Prisma', 'Shadcn UI'],
     github: 'https://github.com/Muhammad-Sheik-Nauman/Finwise',
-    demo: 'https://example.com'
+    demo: 'https://finwise-official.vercel.app/'
   },
   {
     title: 'Whispr',
@@ -21,11 +21,11 @@ const projects = [
     demo: 'https://dropdeal.vercel.app/'
   },
   {
-    title: 'Coming Soon...',
-    description: '',
-    tech: [''],
-    github: 'https://github.com',
-    demo: 'https://example.com'
+    title: 'PDFbro',
+    description: 'PDFBro is a fast, free, and privacy-focused online platform providing essential PDF tools.No login required. No watermarks. Simple, secure, and easy to use',
+    tech: ['Next Js', 'Tailwind CSS', 'shadcn/ui', 'Lucide React'],
+    github: 'https://github.com/Muhammad-Sheik-Nauman/PDFbro',
+    demo: 'https://pdfbro.me/'
   }
 ]
 
