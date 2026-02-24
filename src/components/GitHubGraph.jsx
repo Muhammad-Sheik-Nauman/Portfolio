@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 const GitHubGraph = () => {
   const [contributions, setContributions] = useState([])
   const [loading, setLoading] = useState(true)
-  const [stats, setStats] = useState({ total: 0, streak: 0 })
+  const [stats, setStats] = useState({ total: 0 })
 
   useEffect(() => {
     fetchContributions()
@@ -38,15 +38,7 @@ const GitHubGraph = () => {
 
   const calculateStats = (contributions) => {
     const total = contributions.reduce((sum, day) => sum + day.count, 0)
-    let currentStreak = 0
-    for (let i = contributions.length - 1; i >= 0; i--) {
-      if (contributions[i].count > 0) {
-        currentStreak++
-      } else {
-        break
-      }
-    }
-    setStats({ total, streak: currentStreak })
+    setStats({ total })
   }
 
   const generateMockData = () => {
@@ -106,22 +98,13 @@ const GitHubGraph = () => {
         ) : (
           <>
             {/* Stats Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
               <div className="border border-beige-300 dark:border-dark-border p-6">
                 <div className="text-4xl font-extralight text-beige-900 dark:text-dark-text mb-2">
                   {stats.total}
                 </div>
                 <div className="text-xs uppercase tracking-widest text-beige-600 dark:text-dark-muted">
                   Total Contributions
-                </div>
-              </div>
-
-              <div className="border border-beige-300 dark:border-dark-border p-6">
-                <div className="text-4xl font-extralight text-beige-900 dark:text-dark-text mb-2">
-                  {stats.streak}
-                </div>
-                <div className="text-xs uppercase tracking-widest text-beige-600 dark:text-dark-muted">
-                  Day Streak
                 </div>
               </div>
 
