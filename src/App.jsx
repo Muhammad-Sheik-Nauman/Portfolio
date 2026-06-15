@@ -5,7 +5,6 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
-import GitHubGraph from './components/GitHubGraph'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -23,7 +22,6 @@ function App() {
               <>
                 <Hero />
                 <Projects />
-                <GitHubGraph />
                 <Skills />
                 <Experience />
                 <About />
