@@ -1,25 +1,85 @@
-const skills = [
-  'React', 'JavaScript', 'TypeScript', 'Node.js',
-  'Express', 'MongoDB', 'PostgreSQL', 'Tailwind CSS',
-  'Next.js', 'Git', 'REST APIs', 'GraphQL'
+const skillCategories = [
+  {
+    label: 'Frontend',
+    icon: (
+      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    skills: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS'],
+  },
+  {
+    label: 'Backend',
+    icon: (
+      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+      </svg>
+    ),
+    skills: ['Node.js', 'Express', 'Flask', 'FastAPI', 'MongoDB', 'PostgreSQL', 'REST APIs'],
+  },
+  {
+    label: 'Tools',
+    icon: (
+      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+    skills: ['Git', 'Docker', 'AWS', 'Postman', 'NPM', 'VS Code', 'PyCharm', 'IntelliJ', 'Resend', 'Clerk', 'Inngest'],
+  },
+  {
+    label: 'Libraries',
+    icon: (
+      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
+    ),
+    skills: ['Prisma', 'Pandas', 'NumPy', 'OpenCV', 'TensorFlow'],
+  },
 ]
 
 const Skills = () => {
   return (
     <section id="skills" className="py-20 px-6 border-b border-beige-400 dark:border-beige-800">
-      <div className="max-w-3xl mx-auto text-center">
-        <h3 className="text-3xl font-light text-beige-900 dark:text-dark-text mb-12">
-          Skills
-        </h3>
+      <div className="max-w-6xl mx-auto">
 
-        <div className="flex flex-wrap justify-center gap-3">
-          {skills.map((skill) => (
-            <span
-              key={skill}
-              className="px-5 py-2.5 text-sm text-beige-700 dark:text-dark-muted border border-beige-300 dark:border-dark-border rounded-full hover:border-beige-500 dark:hover:border-beige-600 transition-colors"
-            >
-              {skill}
-            </span>
+        {/* Section Header */}
+        <div className="mb-16">
+          <h2 className="text-6xl md:text-7xl font-extralight text-beige-900 dark:text-dark-text tracking-tight">
+            Skills
+          </h2>
+          <p className="mt-4 text-lg text-beige-600 dark:text-dark-muted font-light">
+            Technologies I work with
+          </p>
+        </div>
+
+        {/* Skill Categories Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {skillCategories.map((category) => (
+            <div key={category.label} className="group">
+              {/* Category Label */}
+              <div className="flex items-center gap-2 mb-5">
+                <span className="text-beige-500 dark:text-dark-muted">
+                  {category.icon}
+                </span>
+                <span className="text-xs uppercase tracking-[0.2em] text-beige-500 dark:text-dark-muted font-medium">
+                  {category.label}
+                </span>
+                <div className="flex-1 h-px bg-beige-200 dark:bg-dark-border ml-2" />
+              </div>
+
+              {/* Skill Pills */}
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-4 py-1.5 text-sm text-beige-700 dark:text-dark-muted border border-beige-300 dark:border-dark-border hover:border-beige-600 dark:hover:border-beige-500 hover:text-beige-900 dark:hover:text-dark-text transition-all duration-200 cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
